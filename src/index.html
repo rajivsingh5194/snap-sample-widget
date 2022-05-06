@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Dynamic api</title>
+    <meta charset="utf-8" />
+    
+    
+  </head>
+  <body>
+    <!-- <script src="app.js" type="module"></script> -->
+    <!-- script below is for the purpose of testing widget in the same project, can be removed if testing with other app-->
+    
+      -window.onload = () => {
+        //widget = window.SampleWidget({ appName: "Test App" });
+      };
+    
+      <script>
+        (function (doc, tag, id) {
+          var js = doc.getElementByTagName(tag)[0];
+          if(doc. getElementById(id)) {
+          return ;
+          }
+
+          js = doc.createElement(tag);
+          js.id =id;
+         // js.src ="http://localhost:1234/sample-widget.js";
+          js.src="sample-widget.js" ;
+          js.type ="text/javascript";
+          doc.body.appendChild(js);
+          })(document, "script", "my-sample-widget");
+      </script>
+  </body>
+</html>
